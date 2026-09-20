@@ -1,0 +1,25 @@
+[package]
+name = "pgreplag"
+version = "0.1.0"
+edition = "2021"
+description = "Reports live Postgres physical replication lag in bytes and seconds from pg_stat_replication"
+license = "MIT"
+authors = ["Animesh Raj <animesh080808@gmail.com>"]
+repository = "https://github.com/itsarraj/pgreplag"
+readme = "README.md"
+keywords = ["postgres", "replication", "lag", "database", "cli"]
+categories = ["command-line-utilities", "database"]
+
+[lib]
+name = "pgreplag"
+path = "src/lib.rs"
+
+[[bin]]
+name = "pgreplag"
+path = "src/main.rs"
+
+[dependencies]
+sqlx = { version = "0.8", default-features = false, features = ["runtime-tokio", "tls-rustls", "postgres"] }
+tokio = { version = "1", features = ["full"] }
+clap = { version = "4", features = ["derive"] }
+anyhow = "1"
