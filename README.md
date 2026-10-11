@@ -5,6 +5,12 @@ Reports live Postgres physical replication lag in bytes and seconds from
 at some point, as a proper CLI with configurable warn/critical
 thresholds for a monitoring check.
 
+## Installation
+
+```sh
+cargo install --path .
+```
+
 ## Usage
 
 ```bash
